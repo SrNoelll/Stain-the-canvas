@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <mxeta charset="UTF-8">
+     <link rel="icon" type="image/png" href="log.png" />
+     <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Stais the Canvas</title>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll("button");
+    buttons.forEach(function(button) {
+      button.addEventListener("mouseover", function() {
+        button.style.backgroundColor = "black";
+        button.style.color = "white";
+      });
+      button.addEventListener("mouseout", function() {
+        button.style.backgroundColor = "pink";
+        button.style.color = "black";
+
+      });
+    });
+  });
+</script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('nav a[href^="#"]').on('click',function (e) {
+          e.preventDefault();
+
+          var target = this.hash;
+          var $target = $(target);
+
+          $('html, body').stop().animate({
+              'scrollTop': $target.offset().top
+          }, 600, 'swing', function () {
+              window.location.hash = target;
+          });
+      });
+    });
+  </script>
+
+  </head>
+    <body>
+  <header>
+    <a href="index.html">
+      <img id="heart" src="log.png">
+    </a>
+    <nav>
+      <a href="#videoss">Vídeos Oficiales</a>
+      <a href="#discogra">Discografía</a>
+      <a href="#conci">Conciertos</a>
+      <a href="#spoty">Escuchar Ahora</a>
+    </nav>
+  </header>
+
+
+  <div class="play">
+  <button onclick="playAudio()">
+    <span id="play-icon">&#9658;</span>
+  </button>
+</div>
+<audio id="audio">
+  <source src="ob.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var playIcon = document.getElementById("play-icon");
+var audio = document.getElementById("audio");
+
+audio.addEventListener('play', function() {
+  document.querySelector('.play').classList.add('play-animation');
+});
+
+audio.addEventListener('pause', function() {
+  document.querySelector('.play').classList.remove('play-animation');
+});
+
+function playAudio() {
+  if (audio.paused) {
+    audio.play();
+    playIcon.innerHTML = "&#10074;&#10074;"; // Cambia a ícono de pausa
+  } else {
+    audio.pause();
+    playIcon.innerHTML = "&#9658;"; // Cambia a ícono de reproducción
+  }
+}
+
+</script>
+
+    <div class="container">
+      <form action="#spoty">
+      <img src="logc.png">
+      <button>Listen Now</a></button>
+    </form>
+    </div>
+     <section id="videoss">
+     <main class="presen" class="appear">
+      <h2>VÍDEOS OFICIALES</h2>
+
+        <div class="vid">
+          <h3>DEAD CIRCUS</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/psbrGqGmeOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="vid">
+          <h3>LXVE</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Pyk-K-65Kr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <section id="discogra">
+        </div>
+        <h3> </h3>
+
+    </main>
+    </section>
+    
+    <main class="disco">
+      <h2>DISCOGRAFÍA</h2>
+      <div class="card">
+  <img src="disk1.jpg">
+  <button id="btnn">All Fine</button>
+  <div id="desplegable2" style="display:none;">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7Lf2EWSPBMZZYJ0lWq1RMW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</div>
+
+<script>
+document.getElementById("btnn").addEventListener("click", function() {
+  var desplegable = document.getElementById("desplegable2");
+  var card = document.getElementsByClassName("card")[0];
+  if (desplegable.style.display === "none") {
+    desplegable.style.display = "block";
+    card.style.width = "75%";
+    card.style.height = "75%";
+    card.style.top = "0";
+    card.style.left = "0";
+  } else {
+    desplegable.style.display = "none";
+    card.style.width = "";
+    card.style.height = "";
+    card.style.top = "";
+    card.style.left = "";
+  }
+});
+</script>
+
+      <div class="card" id="hell">
+        <img src="disk2.jpg">
+        <button id="btn">God Made Hell</button>
+        <div id="desplegable" style="display:none;">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3x7bygQ2mvIPwji99Dv46P?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div id="desplegable" style="display:none;">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7Lf2EWSPBMZZYJ0lWq1RMW?utm_source=generator" width="75%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      </div>
+      <section id="conci">
+        <script>
+document.getElementById("btn").addEventListener("click", function() {
+  var desplegable = document.getElementById("desplegable");
+  var card = document.getElementById("hell");
+  if (desplegable.style.display === "none") {
+    desplegable.style.display = "block";
+    card.style.width = "75%";
+    card.style.height = "75%";
+    card.style.top = "0";
+    card.style.left = "0";
+  } else {
+    desplegable.style.display = "none";
+    card.style.width = "";
+    card.style.height = "";
+    card.style.top = "";
+    card.style.left = "";
+  }
+});
+</script>
+
+    </main>
+</section>
+
+<div class="tabla">
+  <h2>Conciertos</h2>
+  <table>
+  <thead>
+    <tr>
+      <th>País</th>
+      <th>Ciudad</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Netherlands</td>
+      <td>Arnhem</td>
+      <td>Fri, FEB 24</td>
+    </tr>
+    <tr>
+      <td>Belgium</td>
+      <td>Liège</td>
+      <td>Sat, FEB 25</td>
+    </tr>
+    <tr>
+      <td>France</td>
+      <td>París</td>
+      <td>Sun, FEB 26</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>Birmingham</td>
+      <td>Mon, FEB 27</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>Bristol</td>
+      <td>Tue, FEB 28</td>
+    </tr>
+    <tr>
+      <td>Germany</td>
+      <td>Stuttgart</td>
+      <td>Wed, MAR 8</td>
+    </tr>
+    <tr>
+      <td>Francia</td>
+      <td>Lyon</td>
+      <td>Thu, MAR 9</td>
+    </tr>
+    <tr>
+      <td>Milan, Italy</td>
+      <td>Milan</td>
+      <td>Fri, MAR 10</td>
+    </tr>
+    <tr>
+      <td>Switzerland</td>
+      <td>Aarau</td>
+      <td>Sat, MAR 11</td>
+    </tr>
+    <tr>
+      <td>Germany</td>
+      <td>Munich</td>
+      <td>Sun, MAR 12</td>
+    </tr>
+  </tbody>
+</table>
+<h3> </h3>
+
+</div>
+</section>
+
+<section id="spoty">
+<main class="musi">
+      <h2>Escuchar ahora</h2>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/567L1a4812VuMSRrbCqdo4?utm_source=generator" width="50%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  <h2> </h2>
+  <h3> </h3>
+    </main>
+</section>
+
+
+
+    <footer id="footer">
+      <p>Copyright ©2023 PaPaustoMalegro´s company</p>
+    </footer>
+  </body>
+</html>
